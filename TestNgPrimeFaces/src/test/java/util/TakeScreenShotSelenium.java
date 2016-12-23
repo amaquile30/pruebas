@@ -20,7 +20,7 @@ public class TakeScreenShotSelenium {
     */
    public static void takeScreenShotTest(WebDriver driver, String imageName) {
       //Directorio donde quedaran las imagenes guardadas
-      File directory = new File("Z:\\Macintosh HD\\MVWin10\\workspace\\TestNgPrimeFaces\\screenshot");
+      File directory = new File("Z:\\Macintosh HD\\MVWin10\\workspace\\TestNgPrimeFaces\\target\\screenshot");
  
       try {
          if (directory.isDirectory()) {
