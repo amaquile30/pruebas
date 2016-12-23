@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="appURL" value="http://www.primefaces.org/showcase/index.xhtml"/>
+  <parameter name="browserType" value="firefox"/>
+  <test name="Test(failed)">
+    <classes>
+      <class name="scripts.PrimeFaces">
+        <methods>
+          <include name="initializeTestBaseSetup"/>
+          <include name="clicMenuInputEditor"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- scripts.PrimeFaces -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

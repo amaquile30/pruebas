@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+	<parameter name="appURL" value="http://www.primefaces.org/showcase/index.xhtml"/>
+	<parameter name="browserType" value="firefox"/>
+  <test name="Test">
+    <classes>
+      <class name="scripts.PrimeFaces"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
