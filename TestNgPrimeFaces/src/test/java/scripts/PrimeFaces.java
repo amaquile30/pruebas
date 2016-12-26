@@ -81,8 +81,7 @@ public class PrimeFaces extends DriverSetup{
 	public void tearDown(ITestResult result) {
 		if (ITestResult.FAILURE==result.getStatus()){
 			try{
-				TakeScreenShot takes=new TakeScreenShot();
-				takes.onTestFailure(result);
+				TakeScreenShot.captureScreenshot(driver, result.getName());
 				Reporter.setCurrentTestResult(result); 
 			
 				   String urlJ = System.getenv("jenkins.jobUrl");
