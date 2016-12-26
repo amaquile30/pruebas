@@ -47,7 +47,6 @@
 					</suiteXmlFiles>
 					<environmentVariables>
 				       <jenkins.buildId>${env.BUILD_ID}</jenkins.buildId>  
-				       <jenkins.jobUrl>${env.JOB_NAME}</jenkins.jobUrl>
 				    </environmentVariables>
 				</configuration>
 			</plugin>
