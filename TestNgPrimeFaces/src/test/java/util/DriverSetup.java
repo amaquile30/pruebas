@@ -10,7 +10,7 @@ import org.testng.annotations.Parameters;
 public class DriverSetup {
 	private static WebDriver driver;
 	
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return driver;
 	}
 	
