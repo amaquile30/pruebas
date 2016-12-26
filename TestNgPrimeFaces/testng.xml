@@ -7,4 +7,7 @@
       <class name="scripts.PrimeFaces"/>
     </classes>
   </test> <!-- Test -->
+  <listeners>
+       <listener class-name="util.TestListener"/>
+  </listeners>
 </suite> <!-- Suite -->
