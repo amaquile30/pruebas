@@ -85,7 +85,7 @@ public class PrimeFaces extends DriverSetup{
 	   String urlJ = System.getenv("jenkins.jobUrl");
 	   String job = System.getenv("jenkins.buildId");
 	   urlJ = urlJ +"/"+ job + "/";
-	   urlJ = urlJ + "artifact/target/Screenshots/";
+	   urlJ = urlJ + "./target/Screenshots/";
 	   Reporter.log(result.getName());
 	   Reporter.log("<a href ='" + urlJ + result.getName() + ".png'> ");
 	   Reporter.log("<br> <img src='" + urlJ + result.getName() + ".png' height='200' width='200'/> <br>");
