@@ -1,12 +1,5 @@
 package scripts;
 
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Method;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -15,12 +8,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.thoughtworks.selenium.webdriven.commands.MethodDeclaration;
 
 import pages.PaginaPrincipalPrimeFacesPage;
 import util.DriverSetup;
 import util.TakeScreenShot;
-import util.TakeScreenShotSelenium;
 
 public class PrimeFaces extends DriverSetup{
 	private WebDriver driver;
@@ -92,15 +83,16 @@ public class PrimeFaces extends DriverSetup{
 			try{
 				TakeScreenShot takes=new TakeScreenShot();
 				takes.onTestFailure(result);
-//				TakeScreenShot.captureScreenshot(DriverSetup.getDriver(), result.getName());		
 				Reporter.setCurrentTestResult(result); 
 			
-				String url = "../../../../artifact/target/Screenshots/";
-				System.out.println(url);
-				Reporter.log("<a href ='"+url + result.getName() + ".png'> ");
-			    Reporter.log("<br> <img src='"+url + result.getName() + ".png' height='200' width='200'/> <br>");
-				// close application
-//				DriverSetup.getDriver().quit();
+				   String urlJ = System.getenv("jenkins.jobUrl");
+				   String job = System.getenv("jenkins.buildId");
+				   urlJ = urlJ +"/"+ job + "/";
+				   urlJ = urlJ + "artifact/target/Screenshots/";
+				   Reporter.log(result.getName());
+				   Reporter.log("<a href ='" + urlJ + result.getName() + ".png'> ");
+				   Reporter.log("<br> <img src='" + urlJ + result.getName() + ".png' height='200' width='200'/> <br>");
+				   
 			}catch(Exception e){
 				System.out.println("Excepción a tomar la captura "+e.getMessage());
 			}

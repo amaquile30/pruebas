@@ -45,7 +45,10 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
-
+					<environmentVariables>
+				       <jenkins.buildId>${env.BUILD_ID}</jenkins.buildId>  
+				       <jenkins.jobUrl>${env.JOB_URL}</jenkins.jobUrl>
+				    </environmentVariables>
 				</configuration>
 			</plugin>
 		</plugins>
