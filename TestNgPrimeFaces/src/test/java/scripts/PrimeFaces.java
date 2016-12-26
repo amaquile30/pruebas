@@ -35,8 +35,6 @@ public class PrimeFaces extends DriverSetup{
 				Assert.fail(msj);
 			}
     	}catch(Exception e){
-//    		TakeScreenShotSelenium.captureScreenshot(driver, "Menu");
-//			TakeScreenShotSelenium.takeScreenShotTest(driver, "menu");
     		Assert.fail("Ocurrio un problema inexperado " +e);
     	}
     }
@@ -49,8 +47,6 @@ public class PrimeFaces extends DriverSetup{
     		if (msj.equals("Ok")){
 				Assert.assertTrue(true);
 			}else{
-//				TakeScreenShotSelenium.captureScreenshot(driver, "clicMenuInput");
-//				TakeScreenShotSelenium.takeScreenShotTest(driver, "clicMenuInput");
 				Assert.fail(msj);
 			}
     	}catch(Exception e){
@@ -67,8 +63,6 @@ public class PrimeFaces extends DriverSetup{
     		if (msj.equals("Ok")){
 				Assert.assertTrue(true);
 			}else{
-//				TakeScreenShotSelenium.captureScreenshot(driver, "clicMenuInputEditor");
-//				TakeScreenShotSelenium.takeScreenShotTest(driver, "clicMenuInputEditor");
 				Assert.fail(msj);
 				
 			}

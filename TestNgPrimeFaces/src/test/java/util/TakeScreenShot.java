@@ -1,15 +1,11 @@
 package util;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
 
 public class TakeScreenShot {
 //	static WebDriver driver=null;
@@ -26,7 +22,7 @@ public class TakeScreenShot {
 		 
 		File source=ts.getScreenshotAs(OutputType.FILE);
 		 
-		FileUtils.copyFile(source, new File("./target/Screenshots/"+screenshotName+".png"));
+		FileUtils.copyFile(source, new File("/target/Screenshots/"+screenshotName+".png"));
 		 
 		System.out.println("Screenshot taken");
 	} 
