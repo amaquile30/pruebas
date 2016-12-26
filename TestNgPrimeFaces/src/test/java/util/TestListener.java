@@ -13,7 +13,7 @@ import org.testng.ITestResult;
 
 public class TestListener implements ITestListener {
 	WebDriver driver=null;
-	String filePath = "./ScreenshotsTestListener/";
+	String filePath = ".target/ScreenshotsTestListener/";
     @Override
     public void onTestFailure(ITestResult result) {
     	System.out.println("***** Error "+result.getName()+" test has failed *****");
