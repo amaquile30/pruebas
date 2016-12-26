@@ -88,17 +88,24 @@ public class PrimeFaces extends DriverSetup{
 	}
 	@AfterMethod
 	public void tearDown(ITestResult result) {
-		TakeScreenShot takes=new TakeScreenShot();
-		takes.onTestFailure(result);
-//		TakeScreenShot.captureScreenshot(DriverSetup.getDriver(), result.getName());		
-		Reporter.setCurrentTestResult(result); 
-	
-		String url = "../../../../artifact/target/Screenshots/";
-		System.out.println(url);
-		Reporter.log("<a href ='"+url + result.getName() + ".png'> ");
-	    Reporter.log("<br> <img src='"+url + result.getName() + ".png' height='200' width='200'/> <br>");
-		// close application
-//		DriverSetup.getDriver().quit();
+		if (ITestResult.FAILURE==result.getStatus()){
+			try{
+				TakeScreenShot takes=new TakeScreenShot();
+				takes.onTestFailure(result);
+//				TakeScreenShot.captureScreenshot(DriverSetup.getDriver(), result.getName());		
+				Reporter.setCurrentTestResult(result); 
+			
+				String url = "../../../../artifact/target/Screenshots/";
+				System.out.println(url);
+				Reporter.log("<a href ='"+url + result.getName() + ".png'> ");
+			    Reporter.log("<br> <img src='"+url + result.getName() + ".png' height='200' width='200'/> <br>");
+				// close application
+//				DriverSetup.getDriver().quit();
+			}catch(Exception e){
+				System.out.println("Excepción a tomar la captura "+e.getMessage());
+			}
+		}
+		
 	}
 	
 }
