@@ -88,7 +88,9 @@ public class PrimeFaces extends DriverSetup{
 	}
 	@AfterMethod
 	public void tearDown(ITestResult result) {
-		TakeScreenShot.captureScreenshot(DriverSetup.getDriver(), result.getName());		
+		TakeScreenShot takes=new TakeScreenShot();
+		takes.onTestFailure(result);
+//		TakeScreenShot.captureScreenshot(DriverSetup.getDriver(), result.getName());		
 		Reporter.setCurrentTestResult(result); 
 	
 		String url = "../../../../artifact/target/Screenshots/";
