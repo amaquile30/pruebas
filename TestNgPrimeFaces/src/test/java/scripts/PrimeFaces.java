@@ -96,7 +96,7 @@ public class PrimeFaces extends DriverSetup{
 		Reporter.log("<a href ='"+url + result.getName() + ".png'> ");
 	    Reporter.log("<br> <img src='"+url + result.getName() + ".png' height='200' width='200'/> <br>");
 		// close application
-		DriverSetup.getDriver().quit();
+//		DriverSetup.getDriver().quit();
 	}
 	
 }
