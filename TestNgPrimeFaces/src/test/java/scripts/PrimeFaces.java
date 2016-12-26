@@ -82,13 +82,13 @@ public class PrimeFaces extends DriverSetup{
 	  if (!result.isSuccess()) {
 	   TakeScreenShot.captureScreenshot(DriverSetup.getDriver(), result.getName());
 	   Reporter.setCurrentTestResult(result);   
-	   String urlJ = System.getenv("jenkins.jobUrl");
+//	   String urlJ = System.getenv("jenkins.jobUrl");
 	   String job = System.getenv("jenkins.buildId");
-	   urlJ = urlJ +"/"+ job + "/";
-	   urlJ = urlJ + "./target/Screenshots/";
+//	   urlJ = urlJ +"/"+ job + "/";
+//	   urlJ = urlJ + "./target/Screenshots/";
 	   Reporter.log(result.getName());
-	   Reporter.log("<a href ='" + urlJ + result.getName() + ".png'> ");
-	   Reporter.log("<br> <img src='" + urlJ + result.getName() + ".png' height='200' width='200'/> <br>");
+//	   Reporter.log("<a href ='" + urlJ + result.getName() + ".png'> ");
+//	   Reporter.log("<br> <img src='" + urlJ + result.getName() + ".png' height='200' width='200'/> <br>");
 	  }  
 	 }
 		
