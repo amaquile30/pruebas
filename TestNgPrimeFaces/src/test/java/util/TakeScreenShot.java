@@ -14,7 +14,7 @@ import org.testng.ITestResult;
 public class TakeScreenShot {
 //	static WebDriver driver=null;
 	
-	static String filePath = "./target/Screenshots/";
+//	static String filePath = "./target/Screenshots/";
 	
 	
 	public static void captureScreenshot(WebDriver driver,String screenshotName)
@@ -26,7 +26,7 @@ public class TakeScreenShot {
 		 
 		File source=ts.getScreenshotAs(OutputType.FILE);
 		 
-		FileUtils.copyFile(source, new File(filePath+screenshotName+".png"));
+		FileUtils.copyFile(source, new File("./target/Screenshots/"+screenshotName+".png"));
 		 
 		System.out.println("Screenshot taken");
 	} 
