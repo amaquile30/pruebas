@@ -1,9 +1,20 @@
 package scripts;
 
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Method;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.thoughtworks.selenium.webdriven.commands.MethodDeclaration;
 
 import pages.PaginaPrincipalPrimeFacesPage;
 import util.DriverSetup;
@@ -31,7 +42,8 @@ public class PrimeFaces extends DriverSetup{
 				Assert.fail(msj);
 			}
     	}catch(Exception e){
-			TakeScreenShotSelenium.takeScreenShotTest(driver, "menu");
+    		TakeScreenShotSelenium.captureScreenshot(driver, "Menu");
+//			TakeScreenShotSelenium.takeScreenShotTest(driver, "menu");
     		Assert.fail("Ocurrio un problema inexperado " +e);
     	}
     }
@@ -44,7 +56,8 @@ public class PrimeFaces extends DriverSetup{
     		if (msj.equals("Ok")){
 				Assert.assertTrue(true);
 			}else{
-				TakeScreenShotSelenium.takeScreenShotTest(driver, "clicMenuInput");
+				TakeScreenShotSelenium.captureScreenshot(driver, "clicMenuInput");
+//				TakeScreenShotSelenium.takeScreenShotTest(driver, "clicMenuInput");
 				Assert.fail(msj);
 			}
     	}catch(Exception e){
@@ -61,7 +74,8 @@ public class PrimeFaces extends DriverSetup{
     		if (msj.equals("Ok")){
 				Assert.assertTrue(true);
 			}else{
-				TakeScreenShotSelenium.takeScreenShotTest(driver, "clicMenuInputEditor");
+				TakeScreenShotSelenium.captureScreenshot(driver, "clicMenuInputEditor");
+//				TakeScreenShotSelenium.takeScreenShotTest(driver, "clicMenuInputEditor");
 				Assert.fail(msj);
 				
 			}
@@ -70,4 +84,5 @@ public class PrimeFaces extends DriverSetup{
     		Assert.fail("Ocurrio un problema inexperado " +e);
     	}
 	}
+	
 }

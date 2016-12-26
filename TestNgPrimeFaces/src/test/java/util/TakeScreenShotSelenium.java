@@ -7,6 +7,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 
 public class TakeScreenShotSelenium {
  
@@ -36,6 +37,17 @@ public class TakeScreenShotSelenium {
          //Impresion de Excepciones
          e.printStackTrace();
       }
+   }
+   
+   public static void captureScreenshot(WebDriver driver, String screenshotName){
+	   try{
+		   TakesScreenshot ts=(TakesScreenshot)driver;
+		   File source =ts.getScreenshotAs(OutputType.FILE);
+		   FileUtils.copyFile(source, new File("./Screenshots/"+screenshotName+".png"));
+		   System.out.println("Captura realizada");
+	   }catch (Exception e){
+		   System.out.println("Excepción generada en la toma de captura "+ e.getMessage());
+	   }
    }
  
 }
